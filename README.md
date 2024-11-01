@@ -1,8 +1,6 @@
 # Death Time Middleware in APIsREST with ExpressJS
 
-![Mi genial imagen](img/Example.jpg)
-
-This is an example of how the Death Time middleware works.
+This is an example of how the Death Time middleware works in Express.
 
 ## Before Installation
 
@@ -27,24 +25,22 @@ $ docker-compose up
 # Start datebase
 $ docker-compose up db
 
-# Start server inside the  `./server` folder
+# Start server 
 $ npm install
 $ npx prisma generate
 $ npx prisma migrate deploy
 $ npm run dev
 
-# Start client inside the `./client` folder
-$ npm install
-$ npm run dev
+
 ``` 
 
 ## Port
 
-[localhost:5173](http://localhost:5173)
+[localhost:3001](http://localhost:3001)
 
 ## Documentation
 
-The server code is documented in Swagger. You can acces it at [localhost:3000/docs](http://localhost:3000/docs/)
+The server code is documented in Swagger. You can acces it at [localhost:3001/docs](http://localhost:3001/docs/)
 
 
 ## Author
