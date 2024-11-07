@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { verifyTime } from "../../middleware/DeathTime.middleware";
+import { DeathTime } from "../../middleware/DeathTime.middleware";
 import UserControllers from "../controllers/user.controller";
 import UserService from "../service/users.service";
 
@@ -96,7 +96,7 @@ const Controller = new UserControllers(Service)
 
 /**
  * @swagger
- * /users:
+ * /User:
  *  get:
  *      summary: Return all Users List
  *      tags: [Get Users]
@@ -112,10 +112,10 @@ const Controller = new UserControllers(Service)
  *          500:
  *              description: Server error
  */
-UserRoutes.get('/users', verifyTime, Controller.getRegister.bind(Controller));
+UserRoutes.get('/User', DeathTime, Controller.getRegister.bind(Controller));
 /**
  * @swagger
- * /users/{id}:
+ * /User/{id}:
  *  get:
  *      summary: Search a user by ID
  *      tags: [Get Users]
@@ -137,10 +137,10 @@ UserRoutes.get('/users', verifyTime, Controller.getRegister.bind(Controller));
  *          500:
  *              description: Server Error
  */
-UserRoutes.get("/users/:id", verifyTime, Controller.getByid.bind(Controller))
+UserRoutes.get("/User/:id", DeathTime, Controller.getByid.bind(Controller))
 /**
  * @swagger
- * /users:
+ * /User:
  *  post:
  *      summary: Create a new Users
  *      tags: [Create]
@@ -166,10 +166,10 @@ UserRoutes.get("/users/:id", verifyTime, Controller.getByid.bind(Controller))
  *          500:
  *              description: Server Error
  */
-UserRoutes.post('/users', verifyTime, Controller.postRegister.bind(Controller));
+UserRoutes.post('/User', DeathTime, Controller.postRegister.bind(Controller));
 /**
  * @swagger
- * /users/{id}:
+ * /User/{id}:
  *  put:
  *      summary: Update a user
  *      tags: [Update]
@@ -197,10 +197,10 @@ UserRoutes.post('/users', verifyTime, Controller.postRegister.bind(Controller));
  *          500:
  *              description: Server Error
  */
-UserRoutes.put('/users/:id', verifyTime, Controller.updateRegister.bind(Controller));
+UserRoutes.put('/User/:id', DeathTime, Controller.updateRegister.bind(Controller));
 /**
  * @swagger
- * /users/{id}:
+ * /User/{id}:
  *  delete:
  *      summary: Delete a user by ID
  *      tags: [Delete]
@@ -222,6 +222,6 @@ UserRoutes.put('/users/:id', verifyTime, Controller.updateRegister.bind(Controll
  *          500:
  *              description: Server Error
  */
-UserRoutes.delete('/users/:id', verifyTime, Controller.deleteRegister.bind(Controller))
+UserRoutes.delete('/User/:id', DeathTime, Controller.deleteRegister.bind(Controller))
 
 export default UserRoutes;

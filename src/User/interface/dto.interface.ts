@@ -4,7 +4,7 @@ import { users } from "@prisma/client";
 export interface ServiceResponse<T> {
     statusCode: httpsStatusCode;
     body: {
-        message: string;
+        message?: string;
         data?: T;
         details?: string;
     }

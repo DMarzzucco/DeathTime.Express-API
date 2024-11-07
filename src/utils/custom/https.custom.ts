@@ -8,6 +8,9 @@ export class ResponseStatudsHTTPS {
     static cretae<T>(data: T, message: string = "Created") {
         return { statusCode: httpsStatusCode.CREATED, body: { message, data } }
     }
+    static Ok<T>(data: T){
+        return {statusCode: httpsStatusCode.OK, body:{data}}
+    }
     static notFound(message: string = "Not Found") {
         return { statusCode: httpsStatusCode.NOT_FOUND, body: { message } }
     }

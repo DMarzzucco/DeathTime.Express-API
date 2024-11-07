@@ -2,9 +2,9 @@ import { dateCreate, updateCreate, ServiceResponse } from "../interface/dto.inte
 import { prisma } from "../../prisma/prisma.service";
 import { Prisma, users } from "@prisma/client"
 import { ResponseStatudsHTTPS } from "../../utils/custom/https.custom";
-import { UserServiceImpl } from "./interface/impl.interface";
+import { IUserServiceImpl } from "./interface/impl.interface";
 
-export default class UserService implements UserServiceImpl {
+export default class UserService implements IUserServiceImpl {
 
     async getAll(): Promise<ServiceResponse<users[]>> {
         const users = await prisma.users.findMany();

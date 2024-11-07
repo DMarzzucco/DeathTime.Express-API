@@ -1,7 +1,7 @@
 import { users } from "@prisma/client";
 import { dateCreate, ServiceResponse, updateCreate } from "../../interface/dto.interface";
 
-export interface UserServiceImpl {
+export interface IUserServiceImpl {
 
     getAll(): Promise<ServiceResponse<users[]>>
 

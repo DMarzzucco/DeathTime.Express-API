@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { dateCreate } from "../interface/dto.interface";
-import UserService from "../service/users.service";
 import { asyncHandler } from "../../utils/Exepetions/expetions.error";
+import { IUserServiceImpl } from "../service/interface/impl.interface";
 
 export default class UserControllers {
 
-    constructor(readonly service: UserService) { }
+    constructor(readonly service: IUserServiceImpl) { }
 
     public getRegister = asyncHandler(async (_req: Request, res: Response) => {
         const result = await this.service.getAll()
