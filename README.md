@@ -11,26 +11,37 @@ Before testing the application, it is recommended to check the source code to co
 ```
 ## Requirements
 
-* Docker
-* Node js (Optional)
+* Docker [Docker-Desktope](https://www.docker.com/products/docker-desktop/)
+* Node js [Node](https://nodejs.org/en/download/package-manager) (Optional)
 
-## Intallation
+## Installation in Docker Container
 
 ```bash 
-# Start with Docker
+# Initial App
 $ docker-compose up
+``` 
+# Installation in Local Machine
 
-# If yout have Node.Js and want to start the process in your local machine, follows this path:
+The first thing you are going to have to do is go to the environment variables and change the container path to the localhost path.
 
+```json
+DATABASE_URL="postgres://user:password@localhost:5432/data_base"
+``` 
+``` bash
 # Start datebase
 $ docker-compose up db
 
-# Start server 
+# Install Module 
 $ npm install
-$ npx prisma generate
-$ npx prisma migrate deploy
-$ npm run dev
 
+# Generate the Models
+$ npx prisma generate
+
+# Migration to the database
+$ npx prisma migrate deploy
+
+# Run Server
+$ npm run dev
 
 ``` 
 
