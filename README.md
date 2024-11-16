@@ -24,7 +24,7 @@ $ docker-compose up
 
 The first thing you are going to have to do is go to the environment variables and change the container path to the localhost path.
 
-```json
+```.env
 DATABASE_URL="postgres://user:password@localhost:5432/data_base"
 ``` 
 ``` bash
